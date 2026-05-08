@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latunumis - Rareté & Curiosité</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background-color: #f1ede4;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin: 0;
+            padding: 20px;
+            align-items: center;
+            font-family: 'Lato', sans-serif;
+            color: #2c3e50;
+        }
+
+        /* Responsive container */
+        .slide-container {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            background-color: #FFF9F0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-radius: 4px;
+        }
+
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 10px;
+            background: linear-gradient(90deg, #002B45 0%, #C5A059 100%);
+        }
+
+        h1, h2, h3 { font-family: 'Merriweather', serif; color: #002B45; margin: 0; }
+        h1 { font-size: clamp(40px, 8vw, 72px); text-align: center; }
+        
+        .slide-title { 
+            font-size: clamp(24px, 4vw, 42px); 
+            margin-bottom: 30px; 
+            border-left: 5px solid #C5A059; 
+            padding-left: 25px;
+            text-transform: uppercase;
+        }
+
+        .two-column { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; 
+            height: 100%; 
+            align-items: center; 
+        }
+        
+        .image-wrapper { 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+            border: 1px solid #e0e0e0;
+            background: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .image-wrapper img {
+            max-width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+        }
+
+        .cta-banner {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            border-radius: 4px;
+            margin-top: auto;
+        }
+
+        .tiled-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .tile { background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .tile i { font-size: 40px; color: #C5A059; margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .slide-container { padding: 20px; min-height: auto; }
+            body { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        <div style="text-align: center; margin-top: 60px; flex-grow: 1;">
+            <h1>Latunumis</h1>
+            <h2 style="color: #C5A059; font-style: italic;">Rareté & Curiosité</h2>
+            <p style="font-size: 24px; max-width: 800px; margin: 40px auto;">Une sélection numismatique d'exception. Voyagez à travers les siècles grâce à des modules chargés d'histoire.</p>
+        </div>
+        <div class="cta-banner">
+            <p style="font-size: 22px; margin: 0;">Découvrez la boutique sur <a href="https://latunumis.fr" style="color: #f1c40f; text-decoration: none; font-weight: bold;">latunumis.fr</a></p>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Francs Charles X - 1827 K</h2>
+        <div class="two-column">
+            <div>
+                <h3>Le Prestige de Bordeaux</h3>
+                <p style="font-size: 20px;">L'atelier de Bordeaux (K) livre ici une pièce exceptionnelle en état <strong>TTB+/SUP</strong>. Un module de 25,03g qui capture l'essence de la Restauration française.</p>
+                <p style="font-size: 20px;">Les fleurs de lys du blason couronné sont d'une netteté parfaite.</p>
+            </div>
+            <div class="image-wrapper">
+                <img src="public/img/FRA25R5.png" alt="5 Francs Charles X">
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1 Yuan Sun Yat-sen "Jonque" - 1934</h2>
+        <div class="two-column">
+            <div>
+                <h3>L'Éveil de l'Orient</h3>
+                <p style="font-size: 20px;">Issue de la Monnaie de Shanghai, cette pièce est un pilier de la numismatique moderne. Elle représente le passage à une Chine nouvelle.</p>
+                <p style="font-size: 20px;">Le revers montre une jonque traditionnelle sur une mer calme. Exemplaire <strong>TTB+</strong> (L&M# 109).</p>
+            </div>
+            <div class="image-wrapper">
+                <img src="public/img/CHN2A5.png" alt="Avers Sun Yat-sen">
+                <img src="public/img/CHN2R5.png" alt="Revers Jonque">
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Mark Saxe - Leipzig (1909)</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/DEU15A5.png" alt="5 Mark Saxe">
+            </div>
+            <div>
+                <h3>Un Demi-Millénaire d'Histoire</h3>
+                <p style="font-size: 20px;">Célèbre le 500ème anniversaire de l'Université de Leipzig. Frappée à <strong>50 000 exemplaires</strong> à l'atelier de Berlin.</p>
+                <p style="font-size: 20px;">État <strong>SUP</strong> avec une patine périphérique naturelle aux reflets profonds.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">Services Numismatiques Premium</h2>
+        <div class="tiled-content">
+            <div class="tile">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Envoi Sécurisé</h3>
+                <p>Protection rigide et assurance R2/R3 systématique.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-earth-europe"></i>
+                <h3>Expertise Europe</h3>
+                <p>Livraison sécurisée et formalités douanières maîtrisées.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Authenticité</h3>
+                <p>Chaque pièce est expertisée et garantie par Latunumis.</p>
+            </div>
+        </div>
+        <div class="cta-banner" style="margin-top: 40px;">
+            <p style="font-size: 20px; margin: 0;">Visitez <strong>latunumis.fr</strong> pour voir les nouveautés</p>
+        </div>
+    </div>
+
+</body>
+</html>
