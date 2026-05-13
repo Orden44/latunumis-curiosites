@@ -22,7 +22,6 @@
             color: #2c3e50;
         }
 
-        /* Responsive container */
         .slide-container {
             width: 100%;
             max-width: 1280px;
@@ -57,10 +56,35 @@
 
         .two-column { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 40px; 
-            height: 100%; 
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); 
+            gap: 60px; 
+            flex: 1;
             align-items: center; 
+        }
+
+        /* ALTERNANCE AUTOMATIQUE */
+        .slide-container:nth-of-type(even) .two-column {
+            direction: rtl;
+        }
+        .slide-container:nth-of-type(even) .two-column > div {
+            direction: ltr;
+        }
+
+        .btn-decouvrir {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #C5A059; /* Votre couleur or/laiton */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-decouvrir:hover {
+            background-color: #002B45; /* Votre bleu marine pour le survol */
+            color: #C5A059;
         }
         
         .image-wrapper { 
@@ -69,230 +93,297 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
             border: 1px solid #e0e0e0;
             background: #fff;
-            padding: 10px;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            height: 100%;
+            min-height: 450px;
         }
 
         .image-wrapper img {
             max-width: 100%;
-            max-height: 450px;
+            max-height: 400px;
             object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
         }
 
         .cta-banner {
-            background-color: #2c3e50;
+            background-color: #002B45;
             color: white;
             text-align: center;
             padding: 15px;
             width: 100%;
             border-radius: 4px;
-            margin-top: auto;
+            margin-top: 30px;
         }
 
         .tiled-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
         .tile { background: #fff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .tile i { font-size: 40px; color: #C5A059; margin-bottom: 20px; }
 
-        @media (max-width: 768px) {
-            .slide-container { padding: 20px; min-height: auto; }
-            body { padding: 10px; }
+        @media (max-width: 1024px) {
+            .two-column { grid-template-columns: 1fr; }
+            .slide-container:nth-of-type(even) .two-column { direction: ltr; }
+            .slide-container { min-height: auto; }
         }
     </style>
 </head>
 <body>
 
     <div class="slide-container" style="justify-content: center; align-items: center; text-align: center;">
-        
         <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 40px;">
             <img src="public/img/logo-avers.png" alt="Logo Latunumis Avers" style="height: 150px; width: auto; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
             <img src="public/img/logo-revers.png" alt="Logo Latunumis Revers" style="height: 150px; width: auto; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
         </div>
-
         <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center;">
             <h1 style="margin-bottom: 10px;">Latunumis</h1>
             <h2 style="color: #C5A059; font-style: italic; margin-top: 0; font-size: 32px;">Rareté & Curiosité</h2>
+            <p style="font-size: 14px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px;">— Dernières acquisitions ajoutées en tête de catalogue —</p>
             <p style="font-size: 24px; max-width: 800px; margin: 30px auto;">Une sélection numismatique d'exception. Voyagez à travers les siècles grâce à des modules chargés d'histoire.</p>
         </div>
-
         <div class="cta-banner">
             <p style="font-size: 22px; margin: 0;">Découvrez la boutique sur <a href="https://latunumis.fr" style="color: #f1c40f; text-decoration: none; font-weight: bold;">latunumis.fr</a></p>
         </div>
     </div>
 
     <div class="slide-container">
-        <h2 class="slide-title">2 Lires Duché de Lucques - 1837</h2>
-        <div class="two-column">
-            <div>
-                <h3>Élégance Italienne</h3>
-                <p style="font-size: 20px;">Une pièce rare du Duché de Lucques représentant Charles-Louis de Bourbon. L'Italie d'avant l'unification offre des modules d'une grande finesse artistique.</p>
-                <p style="font-size: 20px;">L'argent de 9,10g conserve ici des reliefs qui témoignent du raffinement des petites principautés italiennes du XIXe siècle.</p>
-            </div>
-            <div class="image-wrapper">
-                <img src="public/img/ITA5A5.png" alt="Avers Duché de Lucques">
-            </div>
-        </div>
-    </div>
-
-<div class="slide-container">
-        <h2 class="slide-title">1/2 Franc Napoléon Ier - 1808 B</h2>
+        <h2 class="slide-title">50 Cents Indochine - 1936</h2>
         <div class="two-column">
             <div class="image-wrapper">
-                <img src="public/img/FRA2A5.png" alt="Avers Napoléon Ier">
+                <img src="public/img/FIC1A5.png" alt="Avers Liberté assise Indochine" style="max-width: 48%;">
+                <img src="public/img/FIC1R5.png" alt="Revers 50 Cents Argent 29mm" style="max-width: 48%;">
             </div>
             <div>
-                <h3>L'Épopée Impériale</h3>
-                <p style="font-size: 20px;">Frappée à l'atelier de Rouen (B) sous le Premier Empire, cette pièce témoigne de la réorganisation monétaire napoléonienne. Un module historique en argent.</p>
-                <p style="font-size: 20px;">Le portrait de l'Empereur lauré incarne la puissance d'une époque qui a redessiné les frontières de l'Europe.</p>
+                <h3>Le Module de 29 mm</h3>
+                <p style="font-size: 20px;">Ce millésime 1936 se présente sous un module dense de 29 mm, frappé dans un argent noble à 900‰. Il incarne l'équilibre parfait entre l'esthétique coloniale et la rigueur monétaire de la IIIe République.</p>
+                <p style="font-size: 20px;">Un exemplaire en état <strong>TTB+</strong>, se distinguant par ses reliefs vigoureux et une patine naturelle qui met en valeur la puissance du dessin de Jean-Auguste Barre.</p>                
+                <a href="https://latunumis.fr/fr/coin/125" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
 
     <div class="slide-container">
-        <h2 class="slide-title">20 Centimes Napoléon III - 1864 K</h2>
+        <h2 class="slide-title">2 Pesetas Espagne - 1870 (73)</h2>
         <div class="two-column">
             <div class="image-wrapper">
-                <img src="public/img/FRA13A5.png" alt="Avers Napoléon III Lauré" style="max-width: 48%;">
-                <img src="public/img/FRA13R5.png" alt="Revers Couronne Impériale 1864 K" style="max-width: 48%;">
+                <img src="public/img/ESP6A5.png" alt="Avers Allégorie Espagne" style="max-width: 48%;">
+                <img src="public/img/ESP6R5.png" alt="Revers Armoiries Colonnes Hercule" style="max-width: 48%;">
             </div>
             <div>
-                <h3>L'Exclusivité de Bordeaux</h3>
-                <p style="font-size: 20px;">Avec un tirage restreint de <strong>58 360 exemplaires</strong>, cet exemplaire de l'atelier de Bordeaux (K) est une rareté convoitée. Un petit module qui porte en lui toute la majesté du Second Empire.</p>
-                <p style="font-size: 20px;">L'état <strong>TTB</strong> préserve la finesse des gravures de Barre, notamment sur la couronne impériale et les détails du portrait lauré.</p>
+                <h3>L'Espagne des Pyrénées</h3>
+                <p style="font-size: 20px;">Cette pièce emblématique de 1870 illustre la transition politique de l'Espagne vers les standards de l'Union Latine. Son design allégorique est l'un des plus appréciés des collectionneurs européens.</p>
+                <p style="font-size: 20px;">Exemplaire en état <strong>TTB</strong>, offrant des reliefs élégants et une patine grise d'époque qui met en valeur la finesse de la gravure de Marchionni.</p>
+                <a href="https://latunumis.fr/fr/coin/163" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">2 Francs Semeuse - 1900</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA147A5.png" alt="Avers Semeuse 1900" style="max-width: 48%;">
+                <img src="public/img/FRA147R5.png" alt="Revers 2 Francs 1900" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>Une rareté au tirage</h3>
+                <p style="font-size: 20px;">Avec seulement 450 938 exemplaires sortis des presses, la Semeuse de 1900 est l'une des pièces les plus convoitées de la série. Elle marque le passage au nouveau siècle avec une élégance rare.</p>
+                <p style="font-size: 20px;">Cet exemplaire en état <strong>TTB</strong> se distingue par la finesse de ses reliefs et sa patine authentique, offrant un témoignage précieux de la numismatique française.</p>
+                <a href="https://latunumis.fr/fr/coin/258" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">Barber Quarter Dollar - 1902 O</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/USA20A5.png" alt="Avers Barber Quarter 1902" style="max-width: 48%;">
+                <img src="public/img/USA20R5.png" alt="Revers New Orleans Mint" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Héritage du Sud</h3>
+                <p style="font-size: 20px;">Ce "Quarter" en argent de 1902 a été frappé à La Nouvelle-Orléans, l'un des ateliers les plus iconiques de l'histoire américaine. Le design de Charles Barber incarne la robustesse et l'idéalisme de l'Amérique de la Belle Époque.</p>
+                <p style="font-size: 20px;">Exemplaire affichant une <strong>belle patine grise naturelle</strong>, avec des détails encore bien présents sur l'aigle héraldique du revers.</p>
+                <a href="https://latunumis.fr/fr/coin/114" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">2 Francs Napoléon III - 1867 K</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA118A5.png" alt="Avers Napoléon III Lauré" style="max-width: 48%;">
+                <img src="public/img/FRA118R5.png" alt="Revers Aigle Impérial 2 Francs" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Apogée de l'Union Latine</h3>
+                <p style="font-size: 20px;">Ce module de 2 Francs en argent illustre la puissance de la France impériale en 1867. Frappée à Bordeaux, elle arbore le portrait lauré, symbole d'un règne glorieux et d'une monnaie qui dominait l'Europe.</p>
+                <p style="font-size: 20px;">Exemplaire en état <strong>TTB</strong>, remarquable pour la finesse de sa gravure héraldique et sa patine grise profonde aux reflets authentiques.</p>
+                <a href="https://latunumis.fr/fr/coin/47" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-container">
+        <h2 class="slide-title">1 Franc Napoléon III - 1860 A</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA126A5.png" alt="Avers Napoléon III Tête Nue" style="max-width: 48%;">
+                <img src="public/img/FRA126R5.png" alt="Revers 1 Franc 1860" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Héritage de Barre</h3>
+                <p style="font-size: 20px;">Gravé par Désiré-Albert Barre, ce module "Tête nue" est le symbole de la prospérité économique du Second Empire. L'atelier de Paris signe ici une frappe d'une grande sobriété et d'une finesse exemplaire.</p>
+                <p style="font-size: 20px;">Un exemplaire en état <strong>TTB</strong>, offrant un portrait expressif et une patine grise équilibrée, typique des belles monnaies d'époque.</p>
+                <a href="https://latunumis.fr/fr/coin/196" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>    
 
     <div class="slide-container">
-        <h2 class="slide-title">1/4 Franc Bonaparte Premier Consul - An 12 A</h2>
+        <h2 class="slide-title">1 Drachme Grèce - 1868</h2>
         <div class="two-column">
-            <div>
-                <h3>Le Souffle du Consulat</h3>
-                <p style="font-size: 20px;">Frappée à Paris (A) en l'An 12, cette pièce capture un moment charnière : Bonaparte est encore Premier Consul. Un petit module en argent d'une finesse rare.</p>
-                <p style="font-size: 20px;">L'état <strong>TTB</strong> est remarquable pour cette dénomination, avec un portrait net et des légendes parfaitement lisibles. Un incontournable pour toute collection napoléonienne.</p>
-            </div>
             <div class="image-wrapper">
-                <img src="public/img/FRA29A5.png" alt="Avers Bonaparte Premier Consul" style="max-width: 48%;">
-                <img src="public/img/FRA29R5.png" alt="Revers Quart de Franc An 12" style="max-width: 48%;">
+                <img src="public/img/GRC6A5.png" alt="Avers Georges Ier Grèce" style="max-width: 48%;">
+                <img src="public/img/GRC6R5.png" alt="Revers Blason Royal Grec" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>Un tirage confidentiel</h3>
+                <p style="font-size: 20px;">Avec moins de 480 000 exemplaires frappés, cette drachme est le premier témoin de l'adhésion de la Grèce à l'Union Latine. Sa rareté relative en fait une pièce de choix pour tout collectionneur averti.</p>
+                <p style="font-size: 20px;">Exemplaire en état <strong>TTB</strong>, offrant une patine de caractère et des reliefs héraldiques d'une grande netteté.</p>
+                <a href="https://latunumis.fr/fr/coin/54" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-container">
+        <h2 class="slide-title">1 Shilling Guillaume IV - 1836</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/GBR20A5.png" alt="Avers Guillaume IV" style="max-width: 48%;">
+                <img src="public/img/GBR20R5.png" alt="Revers Couronne One Shilling" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'élégance pré-victorienne</h3>
+                <p style="font-size: 20px;">Ce shilling en argent sterling a été frappé à l'aube de l'ère victorienne. Il porte le portrait de Guillaume IV, dont le règne marqua une transition cruciale dans l'histoire de l'Empire Britannique.</p>
+                <p style="font-size: 20px;">Exemplaire en état <strong>TTB</strong>, offrant une patine authentique et des détails de gravure encore très présents sur le portrait royal.</p>
+                <a href="https://latunumis.fr/fr/coin/229" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
 
     <div class="slide-container">
-        <h2 class="slide-title">5 Francs Louis XVIII - 1824 M</h2>
+        <h2 class="slide-title">20 Centavos Argentine - 1883</h2>
         <div class="two-column">
             <div class="image-wrapper">
-                <img src="public/img/FRA24A5.png" alt="Avers Louis XVIII" style="max-width: 48%;">
-                <img src="public/img/FRA24R5.png" alt="Revers Armoiries Toulouse" style="max-width: 48%;">
+                <img src="public/img/ARG1A5.png" alt="Avers Liberté bonnet phrygien" style="max-width: 48%;">
+                <img src="public/img/ARG1R5.png" alt="Revers Armoiries Argentines" style="max-width: 48%;">
             </div>
             <div>
-                <h3>La Majesté de Toulouse</h3>
-                <p style="font-size: 20px;">Frappée à l'atelier de Toulouse (M) l'année du décès du souverain, cette pièce de 5 Francs est un "gros module" historique de près de 25 grammes d'argent.</p>
-                <p style="font-size: 20px;">Elle présente une patine grise authentique et un revers aux armoiries d'une netteté remarquable. Un exemplaire sain qui incarne la France de la Restauration.</p>
+                <h3>L'influence française au Rio de la Plata</h3>
+                <p style="font-size: 20px;">Cette pièce illustre l'époque où l'Argentine alignait son système monétaire sur celui de l'Union Latine. Gravée par Eugène-André Oudiné, elle porte l'esprit des républiques sœurs par-delà l'Atlantique.</p>
+                <p style="font-size: 20px;">Un exemplaire en état <strong>TTB+</strong>, affichant des reliefs précis et une patine authentique du XIXe siècle.</p>
+                <a href="https://latunumis.fr/fr/coin/228" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
 
     <div class="slide-container">
-        <h2 class="slide-title">1/2 Franc Louis-Philippe Ier - 1840 B</h2>
+        <h2 class="slide-title">1/2 Roupie Édouard VII - 1910</h2>
         <div class="two-column">
             <div class="image-wrapper">
-                <img src="public/img/FRA47A5.png" alt="Avers Louis-Philippe Ier" style="max-width: 48%;">
-                <img src="public/img/FRA47R5.png" alt="Revers 1/2 Franc 1840 B" style="max-width: 48%;">
+                <img src="public/img/IND2A5.png" alt="Avers Édouard VII" style="max-width: 48%;">
+                <img src="public/img/IND2R5.png" alt="Revers Couronne Florale" style="max-width: 48%;">
             </div>
             <div>
-                <h3>La Maîtrise de Rouen</h3>
-                <p style="font-size: 20px;">Avec seulement <strong>117 223 exemplaires</strong> frappés à Rouen (B), ce demi-franc est une pièce de caractère. Le portrait lauré du Roi Citoyen témoigne d'une époque de stabilité économique.</p>
-                <p style="font-size: 20px;">L'état <strong>TTB+</strong> révèle des détails fins, notamment sur la couronne de chêne, le tout enrobé d'une patine authentique.</p>
+                <h3>Le Joyau de l'Empire</h3>
+                <p style="font-size: 20px;">Cette demi-roupie en argent témoigne de la splendeur de l'Inde sous le règne d'Édouard VII. Son revers est l'un des plus élégants de la numismatique coloniale, mêlant symboles britanniques et lotus indiens.</p>
+                <p style="font-size: 20px;">Exemplaire en état <strong>Superbe (SUP)</strong>, présentant une netteté de frappe remarquable et un brillant d'origine préservé.</p>
+                <a href="https://latunumis.fr/fr/coin/227" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
-    </div>
-
+    </div> 
+    
     <div class="slide-container">
-        <h2 class="slide-title">5 Francs Belgique - 1848</h2>
-        <div class="two-column">
-            <div>
-                <h3>L'Aube d'un Royaume</h3>
-                <p style="font-size: 20px;">Ce grand module en argent à l'effigie de Léopold Ier, premier Roi des Belges, célèbre la jeune nation. Une frappe de 25g au design sobre et majestueux.</p>
-                <p style="font-size: 20px;">Un état <strong>TTB</strong> qui préserve toute la dignité du portrait royal et l'élégance de la couronne civique.</p>
-            </div>
-            <div class="image-wrapper">
-                <img src="public/img/BEL6A5.png" alt="Avers Léopold Ier">
-            </div>
-        </div>
-    </div>
-
-    <div class="slide-container">
-        <h2 class="slide-title">5 Mark Prusse - 1895 A</h2>
+        <h2 class="slide-title">1 Dime Seated Liberty - 1862</h2>
         <div class="two-column">
             <div class="image-wrapper">
-                <img src="public/img/DEU13A5.png" alt="Avers Wilhelm II">
+                <img src="public/img/USA8A5.png" alt="Avers Seated Liberty" style="max-width: 48%;">
+                <img src="public/img/USA8R5.png" alt="Revers Wreath" style="max-width: 48%;">
             </div>
             <div>
-                <h3>L'Empire Allemand</h3>
-                <p style="font-size: 20px;">Un imposant module de 27,57g à l'effigie de l'Empereur Guillaume II (Wilhelm II). Frappé à Berlin (A), il symbolise la puissance de la Prusse.</p>
-                <p style="font-size: 20px;">Un état <strong>TTB+</strong> remarquable pour cette pièce de 5 Mark en argent pur à 900‰.</p>
+                <h3>Un Témoin de la Guerre de Sécession</h3>
+                <p style="font-size: 20px;">Frappée en 1862, cette "Dime" est un vestige historique de l'Amérique en plein conflit civil. Elle représente la Liberté assise, tenant un bouclier et un bonnet phrygien.</p>
+                <p style="font-size: 20px;">Cet exemplaire en état <strong>TTB</strong> pèse 2,44g d'argent. Il présente une patine de caractère et des reliefs qui témoignent de la résilience du système monétaire de l'Union.</p>
+                <a href="https://latunumis.fr/fr/coin/370" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>    
 
     <div class="slide-container">
-        <h2 class="slide-title">2 Lei Roumanie - 1872</h2>
-        <div class="two-column">
-            <div>
-                <h3>Rareté des Balkans</h3>
-                <p style="font-size: 20px;">Avec un tirage limité à seulement <strong>262 000 exemplaires</strong>, ce 2 Lei de 1872 est une pièce de collection recherchée pour sa rareté.</p>
-                <p style="font-size: 20px;">L'état <strong>TTB+</strong> souligne la précision du travail de gravure de l'époque du Prince Carol Ier.</p>
-            </div>
-            <div class="image-wrapper">
-                <img src="public/img/ROU3A5.png" alt="Avers 2 Lei Roumanie" style="max-width: 48%;">
-                <img src="public/img/ROU3R5.png" alt="Revers 2 Lei Roumanie" style="max-width: 48%;">
-            </div>
-        </div>
-    </div>    
-
-    <div class="slide-container">
-        <h2 class="slide-title">20 Piastres Égypte - 1923 (AH 1341)</h2>
+        <h2 class="slide-title">1/4 Dollar Standing Liberty - 1924</h2>
         <div class="two-column">
             <div class="image-wrapper">
-                <img src="public/img/EGY7A5.png" alt="Avers Fouad Ier">
+                <img src="public/img/USA19A5.png" alt="Avers Standing Liberty" style="max-width: 48%;">
+                <img src="public/img/USA19R5.png" alt="Revers Eagle Flying" style="max-width: 48%;">
             </div>
             <div>
-                <h3>L'Élégance du Royaume d'Égypte</h3>
-                <p style="font-size: 20px;">Ce module imposant de 40mm est une merveille de la calligraphie arabe de l'époque du Roi Fouad Ier. Frappée à seulement <strong>100 000 exemplaires</strong>.</p>
-                <p style="font-size: 20px;">Le portrait en buste avec le tarbouche traditionnel en fait une pièce hautement convoitée pour sa dimension historique et esthétique.</p>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="slide-container">
-        <h2 class="slide-title">5 Francs Charles X - 1827 K</h2>
-        <div class="two-column">
-            <div>
-                <h3>Le Prestige de Bordeaux</h3>
-                <p style="font-size: 20px;">L'atelier de Bordeaux (K) livre ici une pièce exceptionnelle en état <strong>TTB+/SUP</strong>. Un module de 25,03g qui capture l'essence de la Restauration française.</p>
-                <p style="font-size: 20px;">Les fleurs de lys du blason couronné sont d'une netteté parfaite.</p>
-            </div>
-            <div class="image-wrapper">
-                <img src="public/img/FRA25R5.png" alt="5 Francs Charles X">
+                <h3>Le Rêve Américain</h3>
+                <p style="font-size: 20px;">Ce Quarter Dollar de 1924 est une prouesse artistique. Contrairement à beaucoup d'exemplaires usés, celui-ci présente une date parfaitement lisible et des reliefs préservés.</p>
+                <p style="font-size: 20px;">En état <strong>TTB+</strong>, cette pièce en argent 900‰ incarne l'élégance de la numismatique américaine de l'entre-deux-guerres.</p>
+                <a href="https://latunumis.fr/fr/coin/49" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
 
     <div class="slide-container">
-        <h2 class="slide-title">1 Yuan Sun Yat-sen "Jonque" - 1934</h2>
+        <h2 class="slide-title">Shilling George IV - 1825</h2>
         <div class="two-column">
-            <div>
-                <h3>L'Éveil de l'Orient</h3>
-                <p style="font-size: 20px;">Issue de la Monnaie de Shanghai, cette pièce est un pilier de la numismatique moderne. Elle représente le passage à une Chine nouvelle.</p>
-                <p style="font-size: 20px;">Le revers montre une jonque traditionnelle sur une mer calme. Exemplaire <strong>TTB+</strong> (L&M# 109).</p>
-            </div>
             <div class="image-wrapper">
-                <img src="public/img/CHN2A5.png" alt="Avers Sun Yat-sen" style="max-width: 48%;">
-                <img src="public/img/CHN2R5.png" alt="Revers Jonque" style="max-width: 48%;">
+                <img src="public/img/GBR19A5.png" alt="Avers George IV" style="max-width: 48%;">
+                <img src="public/img/GBR19R5.png" alt="Revers Lion on Crown" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>Le Lion de la Régence</h3>
+                <p style="font-size: 20px;">Ce Shilling en argent Sterling de 1825 arbore le célèbre revers au "Lion sur la Couronne", symbole de la puissance britannique sous George IV.</p>
+                <p style="font-size: 20px;">Un exemplaire en état <strong>TTB</strong>, offrant une patine de collection authentique et des détails héraldiques d'une finesse rare.</p>
+                <a href="https://latunumis.fr/fr/coin/225" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1/2 Gulden Ludwig II - 1838</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/DEU9A5.png" alt="Avers Ludwig II" style="max-width: 48%;">
+                <img src="public/img/DEU9R5.png" alt="Revers 1/2 Gulden" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Élégance du Grand-Duché</h3>
+                <p style="font-size: 20px;">Frappée à l'effigie de Ludwig II, cette demi-Gulden de 1838 est un superbe témoin de la finesse de gravure des États Allemands du XIXe siècle.</p>
+                <p style="font-size: 20px;">L'état <strong>TTB+</strong> révèle chaque détail de la couronne de chêne au revers. Une pièce en argent 900‰.</p>
+                <a href="https://latunumis.fr/fr/coin/226" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">20 Lire Victor-Emmanuel III - 1927 R</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/ITA16A5.png" alt="Avers Italie" style="max-width: 48%;">
+                <img src="public/img/ITA16R5.png" alt="Revers Italie" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Héritage de Rome</h3>
+                <p style="font-size: 20px;">Cette 20 Lire en argent de 1927 illustre le style néoclassique italien. Le revers montre un licteur rendant hommage à l'Italie victorieuse.</p>
+                <p style="font-size: 20px;">Un exemplaire en état <strong>TTB</strong> pesant 15,04g, doté d'une patine de collection authentique.</p>
+                <a href="https://latunumis.fr/fr/coin/143" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
@@ -305,8 +396,41 @@
             </div>
             <div>
                 <h3>Un Demi-Millénaire d'Histoire</h3>
-                <p style="font-size: 20px;">Célèbre le 500ème anniversaire de l'Université de Leipzig. Frappée à <strong>50 000 exemplaires</strong> à l'atelier de Berlin.</p>
-                <p style="font-size: 20px;">État <strong>SUP</strong> avec une patine périphérique naturelle aux reflets profonds.</p>
+                <p style="font-size: 20px;">Célèbre le 500ème anniversaire de l'Université de Leipzig. Frappée à seulement 50 000 exemplaires.</p>
+                <p style="font-size: 20px;">État <strong>SUP</strong> avec une superbe patine périphérique naturelle aux reflets profonds.</p>
+                <a href="https://latunumis.fr/fr/coin/424" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1 Yuan Sun Yat-sen "Jonque" - 1934</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/CHN2A5.png" alt="Avers Chine" style="max-width: 48%;">
+                <img src="public/img/CHN2R5.png" alt="Revers Chine" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Éveil de l'Orient</h3>
+                <p style="font-size: 20px;">Issue de la Monnaie de Shanghai, cette pièce représente le passage à une Chine nouvelle avec sa célèbre jonque traditionnelle.</p>
+                <p style="font-size: 20px;">Exemplaire <strong>TTB+</strong> d'un grand intérêt historique pour la numismatique moderne.</p>
+                <a href="https://latunumis.fr/fr/coin/403" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">20 Piastres Égypte - 1923</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/EGY7A5.png" alt="Avers Égypte" style="max-width: 48%;">
+                <img src="public/img/EGY7R5.png" alt="Revers Égypte" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Élégance du Royaume d'Égypte</h3>
+                <p style="font-size: 20px;">Ce module imposant de 40mm est une merveille de calligraphie arabe de l'époque du Roi Fouad Ier.</p>
+                <p style="font-size: 20px;">Le portrait avec le tarbouche traditionnel en fait une pièce hautement convoitée. Tirage limité à 100 000 exemplaires.</p>
+                <a href="https://latunumis.fr/fr/coin/480" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
@@ -314,14 +438,203 @@
     <div class="slide-container">
         <h2 class="slide-title">British Trade Dollar - 1899 B</h2>
         <div class="two-column">
-            <div>
-                <h3>L'Excellence de l'Atelier de Bombay</h3>
-                <p style="font-size: 20px;">Frappé en Inde pour sécuriser les échanges britanniques en Orient, ce dollar de 1899 porte la marque d'atelier <strong>B</strong>. Il présente une Britannia fière, symbole de domination maritime.</p>
-                <p style="font-size: 20px;">L'état <strong>TTB+</strong> révèle une patine grise homogène et une conservation remarquable des motifs ornementaux de la bordure grecque.</p>
-            </div>
             <div class="image-wrapper">
-                <img src="public/img/GBR29A5.png" alt="Avers Britannia 1899 B" style="max-width: 48%;">
+                <img src="public/img/GBR29A5.png" alt="Avers Trade Dollar" style="max-width: 48%;">
                 <img src="public/img/GBR29R5.png" alt="Revers Trade Dollar" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Excellence de Bombay</h3>
+                <p style="font-size: 20px;">Frappé en Inde pour sécuriser les échanges britanniques en Orient, il présente une Britannia fière, symbole de domination maritime.</p>
+                <p style="font-size: 20px;">État <strong>TTB+</strong> avec une patine grise homogène et une bordure grecque parfaitement conservée.</p>
+                <a href="https://latunumis.fr/fr/coin/404" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">2 Lei Roumanie - 1872</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/ROU3A5.png" alt="Avers Roumanie" style="max-width: 48%;">
+                <img src="public/img/ROU3R5.png" alt="Revers Roumanie" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>Rareté des Balkans</h3>
+                <p style="font-size: 20px;">Avec un tirage limité à seulement 262 000 exemplaires, ce 2 Lei de 1872 est une pièce de collection recherchée.</p>
+                <p style="font-size: 20px;">L'état <strong>TTB+</strong> souligne la précision du travail de gravure de l'époque du Prince Carol Ier.</p>
+                <a href="https://latunumis.fr/fr/coin/393" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Francs Belgique - 1848</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/BEL6A5.png" alt="Avers Belgique">
+            </div>
+            <div>
+                <h3>L'Aube d'un Royaume</h3>
+                <p style="font-size: 20px;">Ce grand module en argent à l'effigie de Léopold Ier, premier Roi des Belges, célèbre la jeune nation. Une frappe majestueuse de 25g.</p>
+                <p style="font-size: 20px;">Un état <strong>TTB</strong> qui préserve toute la dignité du portrait royal et l'élégance de la couronne civique.</p>
+                <a href="https://latunumis.fr/fr/coin/131" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Mark Prusse - 1895 A</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/DEU13A5.png" alt="Avers Prusse">
+            </div>
+            <div>
+                <h3>L'Empire Allemand</h3>
+                <p style="font-size: 20px;">Un imposant module de 27,57g à l'effigie de l'Empereur Guillaume II (Wilhelm II). Frappé à Berlin, il symbolise la puissance prussienne.</p>
+                <p style="font-size: 20px;">Un état <strong>TTB+</strong> remarquable pour cette pièce de 5 Mark en argent pur à 900‰.</p>
+                <a href="https://latunumis.fr/fr/coin/405" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1/2 Franc Louis-Philippe Ier - 1840 B</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA47A5.png" alt="Avers Louis-Philippe" style="max-width: 48%;">
+                <img src="public/img/FRA47R5.png" alt="Revers Louis-Philippe" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>La Maîtrise de Rouen</h3>
+                <p style="font-size: 20px;">Le portrait lauré du Roi Citoyen témoigne d'une époque de stabilité économique. Frappé à Rouen avec un tirage modéré.</p>
+                <p style="font-size: 20px;">L'état <strong>TTB+</strong> révèle des détails fins sur la couronne de chêne et une patine authentique.</p>
+                <a href="https://latunumis.fr/fr/coin/308" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Francs Louis XVIII - 1824 M</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA24A5.png" alt="Avers Louis XVIII" style="max-width: 48%;">
+                <img src="public/img/FRA24R5.png" alt="Revers Louis XVIII" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>La Majesté de Toulouse</h3>
+                <p style="font-size: 20px;">Frappée à l'atelier de Toulouse l'année du décès du souverain, ce "gros module" historique pèse près de 25 grammes d'argent.</p>
+                <p style="font-size: 20px;">Elle présente une patine grise authentique et un revers aux armoiries d'une netteté remarquable.</p>
+                <a href="https://latunumis.fr/fr/coin/151" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Francs Charles X - 1827 K</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA25R5.png" alt="5 Francs Charles X">
+            </div>
+            <div>
+                <h3>Le Prestige de Bordeaux</h3>
+                <p style="font-size: 20px;">L'atelier de Bordeaux livre ici une pièce exceptionnelle en état <strong>TTB+/SUP</strong>. Un module lourd capturant l'essence de la Restauration.</p>
+                <p style="font-size: 20px;">Les fleurs de lys du blason couronné sont d'une netteté parfaite sur ce flan d'argent.</p>
+                <a href="https://latunumis.fr/fr/coin/150" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1/4 Franc Bonaparte Premier Consul - An 12 A</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA29A5.png" alt="Avers Bonaparte" style="max-width: 48%;">
+                <img src="public/img/FRA29R5.png" alt="Revers Bonaparte" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>Le Souffle du Consulat</h3>
+                <p style="font-size: 20px;">Frappée à Paris en l'An 12, cette pièce capture un moment charnière où Bonaparte est encore Premier Consul.</p>
+                <p style="font-size: 20px;">L'état <strong>TTB</strong> est remarquable pour cette dénomination, avec un portrait net et des légendes parfaitement lisibles.</p>
+                <a href="https://latunumis.fr/fr/coin/297" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">5 Francs Cérès - 1870 A</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA66A5.png" alt="Avers Cérès" style="max-width: 48%;">
+                <img src="public/img/FRA66R5.png" alt="Revers Cérès" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>La Rareté de 1870</h3>
+                <p style="font-size: 20px;">Avec un tirage limité à 64 200 exemplaires, cette pièce de Paris est clé pour comprendre la transition républicaine de 1870.</p>
+                <p style="font-size: 20px;">L'état <strong>TTB+</strong> magnifie le travail de gravure d'Oudiné, offrant un relief saisissant sur les attributs de Cérès.</p>
+                <a href="https://latunumis.fr/fr/coin/153" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">20 Centimes Napoléon III - 1864 K</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA13A5.png" alt="Avers Napoléon III" style="max-width: 48%;">
+                <img src="public/img/FRA13R5.png" alt="Revers Napoléon III" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Exclusivité de Bordeaux</h3>
+                <p style="font-size: 20px;">Tirage restreint de 58 360 exemplaires pour l'atelier de Bordeaux. Un petit module portant toute la majesté du Second Empire.</p>
+                <p style="font-size: 20px;">L'état <strong>TTB</strong> préserve la finesse des gravures de Barre sur la couronne impériale.</p>
+                <a href="https://latunumis.fr/fr/coin/336" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1/2 Franc Charles X - 1829 BB</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA9A5.png" alt="Avers Charles X" style="max-width: 48%;">
+                <img src="public/img/FRA9R5.png" alt="Revers Charles X" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>La Rareté de Strasbourg</h3>
+                <p style="font-size: 20px;">Issue d'un tirage très confidentiel de 22 027 exemplaires. Témoigne de la finesse de l'atelier BB.</p>
+                <p style="font-size: 20px;">Dans un état <strong>TTB+</strong>, elle conserve des détails remarquables sur le portrait de Michaut et l'écu royal.</p>
+                <a href="https://latunumis.fr/fr/coin/298" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">1/2 Franc Napoléon Ier - 1808 B</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/FRA2A5.png" alt="Avers Napoléon Ier" style="max-width: 48%;">
+                <img src="public/img/FRA2R5.png" alt="Revers Napoléon Ier" style="max-width: 48%;">
+            </div>
+            <div>
+                <h3>L'Épopée Impériale</h3>
+                <p style="font-size: 20px;">Frappée à Rouen sous le Premier Empire, cette pièce témoigne de la réorganisation monétaire napoléonienne.</p>
+                <p style="font-size: 20px;">Le portrait de l'Empereur lauré incarne la puissance d'une époque qui a redessiné l'Europe.</p>
+                <a href="https://latunumis.fr/fr/coin/291" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-container">
+        <h2 class="slide-title">2 Lires Duché de Lucques - 1837</h2>
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="public/img/ITA5A5.png" alt="Avers Duché de Lucques">
+            </div>
+            <div>
+                <h3>Élégance Italienne</h3>
+                <p style="font-size: 20px;">Représente Charles-Louis de Bourbon. L'Italie d'avant l'unification offre des modules d'une grande finesse artistique.</p>
+                <p style="font-size: 20px;">L'argent de 9,10g conserve ici des reliefs qui témoignent du raffinement des principautés italiennes.</p>
+                <a href="https://latunumis.fr/fr/coin/156" class="btn-decouvrir" target="_blank">Découvrir sur Latunumis</a>
             </div>
         </div>
     </div>
